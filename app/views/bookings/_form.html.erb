@@ -1,0 +1,22 @@
+<%= form_with model: @booking, url: customer_bookings_path, local: true do |f| %>
+
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.date_select :date %>
+  </div>
+
+
+
+
+    <%# <%= f.label :Please_Select_Cleaner %>
+    <%#= f.collection_select :cleaner_id, @cleaner, :id, :first_name %>
+
+    <%#= f.collection_select :cleaner_id, Cleaner.city(:name),:id,:name, include_blank: true %> %>
+
+
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

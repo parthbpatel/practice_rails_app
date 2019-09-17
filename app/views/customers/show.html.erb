@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @customer.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @customer.last_name %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @customer.phone_number %>
+</p>
+
+<%= link_to 'Edit', edit_customer_path(@customer) %> |
+<%= link_to 'Back', root_path %>
+<%= link_to 'Booking', customer_bookings_path(customer_id: @customer.id) %>
+<% if session[:customer_id] %>
+     <%= link_to 'Logout', logout_path, :method => :delete %>
+<% end %>
