@@ -1,5 +1,7 @@
-class CitiesController < ApplicationController
+# frozen_string_literal: true
 
+# cityclass
+class CitiesController < ApplicationController
   def index
     @cities = City.all
   end
@@ -19,5 +21,4 @@ class CitiesController < ApplicationController
   def city_params
     params.require(:city).permit(:name)
   end
-  
 end

@@ -4,6 +4,7 @@ class CreateCleaners < ActiveRecord::Migration[6.0]
       t.string :first_name
       t.string :last_name
       t.decimal :quality_score
+      t.string :phone_number
 
       t.timestamps
     end

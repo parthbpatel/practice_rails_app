@@ -19,6 +19,10 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 
 gem 'pry', '~> 0.12.2'
+gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
+gem 'sinatra'
+gem 'sassc-rails', '~> 2.1', '>= 2.1.2'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -31,6 +35,7 @@ gem 'pry', '~> 0.12.2'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
+  gem 'rubocop', '~> 0.74.0', require: false
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end

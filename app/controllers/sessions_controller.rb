@@ -1,7 +1,8 @@
-class SessionsController < ApplicationController
+# frozen_string_literal: true
 
-  def new
-  end
+# session class
+class SessionsController < ApplicationController
+  def new; end
 
   def create
     @customer = Customer.find_by(phone_number: params[:session][:phone_number])
