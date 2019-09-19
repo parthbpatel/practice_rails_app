@@ -6,7 +6,9 @@ class BookingsController < ApplicationController
   before_action :set_customer
 
   def index
-    @bookings = Booking.all
+    @customer = Customer.find(params[:customer_id])
+
+    @bookings = @customer.bookings
     # @city = City.find(params[:city_id])
     # @bookings = @customer.bookings
     # @cleaner = Cleaner.find(params[:cleaner_id])
