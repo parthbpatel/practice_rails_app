@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_18_073219) do
+ActiveRecord::Schema.define(version: 2019_09_17_085455) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,9 +26,9 @@ ActiveRecord::Schema.define(version: 2019_09_18_073219) do
   end
 
   create_table "cities", force: :cascade do |t|
+    t.string "city"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "name"
     t.bigint "bookings_id"
     t.index ["bookings_id"], name: "index_cities_on_bookings_id"
   end
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2019_09_18_073219) do
   create_table "cities_cleaners", id: false, force: :cascade do |t|
     t.bigint "cleaner_id", null: false
     t.bigint "city_id", null: false
-    t.index ["city_id", "cleaner_id"], name: "index_cities_cleaners_on_city_id_and_cleaner_id"
+    t.string "city"
     t.index ["cleaner_id", "city_id"], name: "index_cities_cleaners_on_cleaner_id_and_city_id"
   end
 
@@ -44,9 +44,9 @@ ActiveRecord::Schema.define(version: 2019_09_18_073219) do
     t.string "first_name"
     t.string "last_name"
     t.decimal "quality_score"
+    t.string "phone_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "phone_number"
   end
 
   create_table "customers", force: :cascade do |t|

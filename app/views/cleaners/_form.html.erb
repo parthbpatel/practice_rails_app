@@ -18,7 +18,7 @@
     <%= f.text_field :phone_number %><br>
   </div>
 
-  <%= f.collection_check_boxes :city_ids, City.all, :id, :name do |b| %>
+  <%= f.collection_check_boxes :city_ids, City.all, :id, :city do |b| %>
     <%= b.check_box %>
     <%= b.label %><br>
   <% end %>
